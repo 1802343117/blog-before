@@ -1,0 +1,118 @@
+/* 风格样式设置 */
+
+/* 字体设置 */
+.zh-title{
+	font-size:18px ;
+	font-weight: 700;
+	color: rgba(0,0,0,,0.8);
+}
+
+.zh-sub-title{
+	font-style: 16px;
+	font-weight: 500;
+	color: rgba(0,0,0,,0.7);
+}
+
+.zh-meta{
+	font-style: 12px;
+	color: #b4b4b4;
+}
+
+/*--------主题设置-------*/
+.zh-primary-theme{
+	background-color: #009688;
+	color: #fff;
+}
+.zh-warning-theme {
+	background-color: #fb8c00;
+	color: #fff;
+}
+.zh-success-theme{
+	background-color: #4caf50;
+	color: #fff;
+}
+.zh-disable-theme{
+	background-color: #e0e0e0;
+	color: #fff;
+}
+
+/*---------按钮设置--------*/
+.zh-btn{
+	border: none;
+	cursor: pointer;
+	margin: 5px;
+}
+.zh-btn-round{
+	border-radius:20px ;
+}
+.zh-btn-circle{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.zb-btn-normal{
+	width: 120px;
+	height: 35px;
+}
+.zh-btn-large{
+	width: 140px;
+	height: 45px;
+}
+
+/* 表单元素样式 */
+.zh-input-box{
+	display: block;
+	border: 1px solid #eee;
+	border-radius:5px;
+	height: 35px;
+}
+
+/* 阴影样式 */
+
+.zh-shadow{
+	box-shadow: 2px 5px 10px #aaa;
+	
+}
+
+/* 头像样式 */
+.zh-avatar{
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
+
+/* 导航条设置 */
+.zh-nav {
+	height: 70px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	/* background-color: #009688; */
+}
+
+.zh-nav-bar {
+	width: 85%;
+	margin: 0 auto;
+}
+/* 导航 */
+.zh-list {
+	display: inline-block;
+	line-height: 70px;
+}
+
+.zh-list li {
+	display: inline-block;
+
+}
+
+/* 超链接样式 */
+.zh-list li a {
+	color: #eee;
+}
+/* 路由激活高亮样式 */
+.router-link-active {
+	color: #fff;
+	font-weight: 700;
+}

@@ -1,0 +1,101 @@
+/* 基础样式，规定所有自定义统一前缀*/
+
+/* -----------全局设置---------- */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+u{
+	list-style: none;
+}
+
+/* -----------布局设置---------- */
+.zh-container{
+	width: 80%;
+	margin: auto;
+	
+}
+.zh-row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.zh-col-12{
+	flex: 1 1 100%;
+}
+
+.zh-col-8{
+	flex: 1 1 66.6%;
+	
+	
+}
+
+.zh-col-6{
+	flex: 1 1 50%;
+}
+
+.zh-col-4{	
+	flex: 1 1 33.3%;
+	background-color: green;
+}
+
+.zh-col-3{
+	flex: 1 1 25%;
+	
+}
+
+.zh-col-2{
+	flex: 1 1 16.6%;
+	background-color: green;
+}
+
+.zh-col-1{
+	flex: 1 1 8.3%;
+}
+
+/* -----------对齐方式设置---------- */
+/* flex横向布局的对齐,横向居中,纵向居中 */
+.zh-fx-center{	
+	justify-content: center;
+}
+/* flex横向布局的对齐,横向左对齐,纵向居中 */
+.zh-fx-left{
+	justify-content: flex-start;
+}
+/* flex横向布局的对齐,横向右对齐,纵向居中 */
+.zh-fx-right{
+	justify-content: flex-end;
+}
+/* flex横向布局的对齐,横向两端对齐，纵向居中 */
+.zh-fx-between{
+	justify-content: space-between;
+}
+/* flex横向布局的对齐,横向均匀分布，纵向居中 */
+.zh-fx-around{
+	justify-content: space-around;
+}
+
+.zh-center{
+	text-align: center;
+}
+
+/* 指定统一前缀的class样式 */
+[class*='zh-fx'] {
+	display: flex;
+	align-items: center;
+}
+
+/* flex纵向布局的对齐,横向居中，纵向顶端对齐 */
+.zh-fx-top{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}

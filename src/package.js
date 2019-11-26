@@ -1,5 +1,5 @@
 {
-  "name": "blog-app",
+  "name": "my-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
