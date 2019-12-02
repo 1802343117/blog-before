@@ -224,9 +224,9 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url("http://b191.photo.store.qq.com/psb?/V14GdvYX3igu2l/0b1PHJzgdfzNk7VbrXIW4vSjoGFxXQ62PYEO4xwcOjI!/b/dL8AAAAAAAAA&bo=kwXeAwAAAAARB3s!&rf=viewer_4");
+	background-image: url(../assets/img/langbo.jpg);
 	/* 图片全屏 */
-	background-size: calc(100%);
+	background-size: calc(110%);
 	
 }
 /* 第三方图标 */
@@ -324,7 +324,7 @@ input {
 	color: #00bbdd;
 }
 /* 注册界面的div */
-.tab-box .tel-box {
+.tel-box {
 	width: 87%;
 	display: flex;
 	justify-content: flex-start;

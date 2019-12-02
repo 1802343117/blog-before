@@ -19,7 +19,8 @@ const routes = [
 	{
 		path: '/',
 		component: Nav,
-		children: [{
+		children: [
+			{
 				path: '/',
 				redirect: '/index'
 			},
@@ -30,42 +31,42 @@ const routes = [
 			{
 				path: 'collection',
 				component: Collections,
-				children: [{
-					path: ':id',
-					component: CollectionDetail
-				}]
+				// children: [{
+				// 	path: ':id',
+				// 	component: CollectionDetail
+				// }]
 			},
 			{
 				path: 'article',
 				component: Articles,
-				children: [{
-					path: ':id',
-					component: ArticleDetail
-				}]
+				// children: [{
+				// 	path: ':id',
+				// 	component: ArticleDetail
+				// }]
 			},
 			{
 				path: 'user',
 				component: Users,
-				children: [{
-						path: 'follows',
-						component: UserFollows
-					},
-					{
-						path: 'fans',
-						component: UserFans
-					},
-					{
-						path: ':id',
-						component: UserDetail
-					}
-				]
+				// children: [{
+				// 		path: 'follows',
+				// 		component: UserFollows
+				// 	},
+				// 	{
+				// 		path: 'fans',
+				// 		component: UserFans
+				// 	},
+				// 	{
+				// 		path: ':id',
+				// 		component: UserDetail
+				// 	}
+				// ]
 			}
 		]
 	},
 	{
 		path: '/sign',
 		component: Sign
-	}
+	},	
 ]
 
 const router = new VueRouter({
