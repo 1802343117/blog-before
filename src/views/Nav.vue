@@ -2,15 +2,31 @@
 	<div>
 		<div class="zh-nav">
 			<div class="zh-nav-bar zh-fx-between">
-				<ul class="zh-list">
-					<li class="ys"><router-link to="/index">主页</router-link></li>
-					<li><router-link to="/collection">专题</router-link></li>
-					<li><router-link to="/article">文章</router-link></li>
-					<li><router-link to="/user">作者</router-link></li>
+				<ul>
+					<button class="dropbtn"><router-link to="/index">主	页</router-link></button>
+					<button class="dropbtn"><router-link to="/article">成长记录</router-link></button>
+					<button class="dropbtn"><router-link to="/lear">学习工具</router-link></button>
+					<div class="dropdown">
+						<button class="dropbtn"><router-link to="/spa">个人空间</router-link></button>
+						<div class="dropdown-content">
+							<button class="dropbtn-tuying"><router-link to="/pic">图库</router-link></button>
+							<button class="dropbtn-tuying"><router-link to="/mus">音乐</router-link></button>
+							<button class="dropbtn-tuying"><router-link to="/ccta">影视</router-link></button>
+						</div>
+					</div>
+					<!-- <button class="dropbtn"><router-link to="/tim">时间轴</router-link></button> -->
+					<button class="dropbtn"><router-link to="/user">留言板</router-link></button>
+					<!-- <li><router-link to="/index">主	页</router-link></li>
+					<li><router-link to="/article">成长记录</router-link></li>
+					<li><router-link to="/">学习工具</router-link></li>
+					<li><router-link to="/collection">个人空间</router-link></li>
+					<li><router-link to="/">个人作品</router-link></li>
+					<li><router-link to="/">时间轴</router-link></li>
+					<li><router-link to="/user">留言板</router-link></li> -->
 				</ul>
 				<div class="changeBox">
 					<router-link to="/sign" v-if="this.user === null" class="sgin">去登录</router-link>
-					<img :src="this.user.avatar" class="zh-avatar" v-if="this.user !== null" />
+					<img :src="this.user.avatar" class="zh-avatar" v-if="this.user !== null" @click="details()"/>
 					<p @click="logout()" v-if="this.user !== null" class="tui">退出</p>
 				</div>
 			</div>
@@ -24,39 +40,23 @@ export default {
 	data() {
 		return {
 			user: JSON.parse(localStorage.getItem('user')),
-			// keywords: '',
-			// slideList: [
-			// 	{
-			// 		url: '#',
-			// 		description: 'one',
-			// 		image: 'https://cdn.dribbble.com/users/329207/screenshots/7824170/media/cc77353e67ca46a4da78553330209a72.jpg'
-			// 	},
-			// 	{
-			// 		url: '#',
-			// 		description: 'two',
-			// 		image: 'https://cdn.dribbble.com/users/63407/screenshots/7825858/media/547d13eb0522eabcbbaa6683c82bfe40.png'
-			// 	},
-			// 	{
-			// 		url: '#',
-			// 		description: 'three',
-			// 		image: 'https://cdn.dribbble.com/users/1018201/screenshots/7816965/media/2ed92a6a7ee0017e28f3bbcaf88b8138.png'
-			// 	}
-			// ],
-			// currentIndex: 0,
-			// timer: null
 		};
 	},
 	created: function() {
 	},
 	changeTab: function() {
-		// this.isActive = !this.isActive;
-		// this.selected = this.selected == 0 ? 1 : 0;
 	},
 	methods: {
+		details: function() {
+			// 路由跳转
+			this.$router.push('/uedt');
+		},
+		
 		logout() {
 			this.user = null;
 			this.$router.push('/');
 			alert('退出');
+			localStorage.clear();
 		},
 		change(index) {
 			this.currentIndex = index;
@@ -81,23 +81,55 @@ export default {
 </script>
 
 <style scoped>
+	.dropdown {
+	  position: relative;
+	  display: inline-block;			/*--行内，块级元素--*/
+	}
+	.dropbtn {							/*--按钮样式--*/
+		background-color: rgb(23,31,35);
+	    color: white;
+	    padding: 20px;
+		font-family: '楷体';
+		font-size: 18px;
+	    border: none;
+	    cursor: pointer;
+	}
+	a{
+		color: white;
+	}
+	.dropbtn-tuying {
+		background-color: rgb(23,31,35);
+		color: white;
+ 		padding: 20px;
+		font-family: '楷体';
+		width: 120px;
+		font-size: 18px;
+		border: none;
+		cursor: pointer;
+	}
+	.dropdown-content {
+	  display: none;			/*--隐藏元素（且元素不占用空间）--*/
+	  position: absolute;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);				/*--阴影效果--*/
+	}
+	.dropdown:hover .dropdown-content {
+	  display: block;			/*--显示元素--*/
+	}
 	.sgin {
 		font-family: '楷体';
-		font-size: 1.25rem;
+		font-size: 18px;
 		color: #FFFFFF;
 	}
-li {
-	margin-right: 50px;
-	font-family: '楷体';
-	font-size: 1.25rem;
-}
 .changeBox {
 	display: flex;
 }
 .tui {
 	cursor: pointer;
 	margin-left: 30px;
-	padding-top: 7px;
+	padding-top: 10%;
+	font-family: '楷体';
+	font-size: 18px;
+	color: #FFFFFF;
 }
 .nav {
 	width: 100%;
@@ -120,5 +152,6 @@ li {
 .content {
 	margin-top: 70px;
 }
+
 
 </style>
